@@ -1,4 +1,4 @@
-<img width="548" height="206" alt="image" src="https://github.com/user-attachments/assets/27f4b2ea-6fc9-4f8c-967f-57f5fe088a3c" /><img width="1632" height="763" alt="image" src="https://github.com/user-attachments/assets/61f9becf-0736-4cc7-8add-ef41748aa082" /># Proyecto BPDS - Lista de Tareas con Papelera
+# Proyecto BPDS - Lista de Tareas con Papelera
 
 Aplicación web desarrollada en **Next.js** con **TypeScript** para la gestión de tareas diarias, incorporando un sistema de papelera, restauración y diseño interactivo.
 
