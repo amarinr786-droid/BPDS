@@ -26,7 +26,8 @@ jobs:
           chmod 600 ~/.ssh/key.pem
           ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Copiar out/ a EC2
+      - name: Copiar archivos a EC2
         run: |
           rsync -avz --delete -e "ssh -i ~/.ssh/key.pem" \
-            ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
+          ./.next ./public ./package.json ./package-lock.json \
+          ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
