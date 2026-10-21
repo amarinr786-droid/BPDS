@@ -3,7 +3,7 @@
 A web application developed using **Next.js** and **TypeScript** for managing daily tasks, featuring a trash system, task restoration, and an interactive design.
 hola
 ---
-
+hola
 ## 👥 Team Members
 
 * María Celeste Bonilla Jaraba
