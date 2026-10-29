@@ -1,4 +1,4 @@
-name: Deploy Next.js (estático) a EC2 + S3
+nname: Deploy Next.js (estático) a EC2 + S3
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-      node-version: 20
+          node-version: 20
           cache: npm
 
       - run: npm ci
