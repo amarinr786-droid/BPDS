@@ -1,4 +1,4 @@
-nname: Deploy Next.js (estático) a EC2 + S3
+name: Deploy Next.js (estático) a EC2 + S3
 
 on:
   push:
