@@ -32,7 +32,16 @@ jobs:
           aws-region: us-east-1
 
       - name: Subir estáticos (_next) a S3
-        run: aws s3 sync ./out/_next s3://${{ secrets.S3_BUCKET }}/_next --cache-control public,max-age=31536000,immutable
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --cache-control "public,max-age=31536000,immutable"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-east-1
+          SOURCE_DIR: 'out/_next'
+          DEST_DIR: '_next'
 
       - name: Configurar SSH
         run: |
