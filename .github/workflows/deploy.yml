@@ -13,7 +13,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+      node-version: 20
           cache: npm
 
       - run: npm ci
@@ -44,4 +44,4 @@ jobs:
       - name: Copiar HTML y el resto a EC2 (sin _next)
         run: |
           rsync -avz --delete --exclude '_next/' -e "ssh -i ~/.ssh/key.pem" \
-            ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}/var/www/html/
+            ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
