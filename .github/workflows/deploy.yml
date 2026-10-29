@@ -32,7 +32,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Subir estáticos (_next) a S3
-        run: aws s3 sync ./out/_next s3://${{ secrets.S3_BUCKET }}/_next --cache-control public,max-age=31536000,immutable
+        env:
+          BUCKET_NAME: ${{ secrets.S3_BUCKET }}
+        run: aws s3 sync ./out/_next s3://$BUCKET_NAME/_next --cache-control public,max-age=31536000,immutable
 
       - name: Configurar SSH
         run: |
@@ -44,4 +46,4 @@ jobs:
       - name: Copiar HTML y el resto a EC2 (sin _next)
         run: |
           rsync -avz --delete --exclude '_next/' -e "ssh -i ~/.ssh/key.pem" \
-            ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
+            ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}/var/www/html/
