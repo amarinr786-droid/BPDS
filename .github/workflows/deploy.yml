@@ -16,13 +16,14 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      - name: Instalar dependencias
+        run: npm ci
 
       - name: Build (genera ./out)
         run: npm run build
 
-      - name: Verificar que existe out/
-        run: test -f out/index.html && ls out
+      - name: Verificar que existe out/_next
+        run: ls out/_next/static
 
       - name: Configurar credenciales de AWS
         uses: aws-actions/configure-aws-credentials@v6
@@ -32,5 +33,5 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
-      - name: Subir sitio a S3
-        run: aws s3 sync ./out s3://${{ secrets.S3_BUCKET }} --delete
+      - name: Subir estáticos (_next) a S3
+        run: aws s3 sync ./out/_next s3://${{ secrets.S3_BUCKET }}/_next --delete
