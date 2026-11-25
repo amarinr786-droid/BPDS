@@ -14,11 +14,15 @@ hola
 
 ---
 
-## ✨ Key Features
 
-* **Creation and Editing**: Add new tasks by pressing Enter, and edit them in real-time by clicking on them.
-* **Status Management**: Mark tasks as completed or pending using interactive visual indicators.
-* **Trash System**: When a task is deleted, it is automatically moved to a "trash" section at the bottom, ensuring it isn't permanently lost.
+## Core Features
+
+* **Task Creation and Inline Editing**: Create tasks quickly via keyboard shortcuts (`Enter`) and update details directly in place with real-time editing.
+* **Status Tracking**: Toggle task states between *Completed* and *Pending* using clear visual indicators for immediate progress visibility.
+* **Soft Deletion and Trash Recovery**: Send removed tasks to a dedicated trash section to prevent accidental permanent data loss.
+* **Task Restoration and Trash Management**: Restore individual items to the active workflow or permanently purge the trash bin when no longer needed.
+
+ it isn't permanently lost.
 * **Restoration and Cleanup**: Restore deleted tasks back to the main list or clear the trash entirely.
 
 ---
